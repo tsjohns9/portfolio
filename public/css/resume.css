@@ -128,6 +128,9 @@ section.resume-section .resume-item .resume-date {
     padding-top: 3rem !important;
     padding-bottom: 3rem !important;
   }
+  div.my-auto {
+    width: 1000px;
+  }
 }
 
 .bg-primary {

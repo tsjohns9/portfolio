@@ -32,7 +32,7 @@ gulp.task('vendor', function() {
       '!./node_modules/devicons/!SVG',
       '!./node_modules/devicons/!SVG/**/*'
     ])
-    .pipe(gulp.dest('./vendor/devicons'));
+    .pipe(gulp.dest('./public/vendor/devicons'));
 
   // Font Awesome
   gulp
@@ -43,24 +43,24 @@ gulp.task('vendor', function() {
       '!./node_modules/font-awesome/.*',
       '!./node_modules/font-awesome/*.{txt,json,md}'
     ])
-    .pipe(gulp.dest('./vendor/font-awesome'));
+    .pipe(gulp.dest('./public/vendor/font-awesome'));
 
   // jQuery
   gulp
     .src(['./node_modules/jquery/dist/*', '!./node_modules/jquery/dist/core.js'])
-    .pipe(gulp.dest('./vendor/jquery'));
+    .pipe(gulp.dest('./public/vendor/jquery'));
 
   // jQuery Easing
-  gulp.src(['./node_modules/jquery.easing/*.js']).pipe(gulp.dest('./vendor/jquery-easing'));
+  gulp.src(['./node_modules/jquery.easing/*.js']).pipe(gulp.dest('./public/vendor/jquery-easing'));
 
   // Simple Line Icons
   gulp
     .src(['./node_modules/simple-line-icons/fonts/**'])
-    .pipe(gulp.dest('./vendor/simple-line-icons/fonts'));
+    .pipe(gulp.dest('./public/vendor/simple-line-icons/fonts'));
 
   gulp
     .src(['./node_modules/simple-line-icons/css/**'])
-    .pipe(gulp.dest('./vendor/simple-line-icons/css'));
+    .pipe(gulp.dest('./public/vendor/simple-line-icons/css'));
 });
 
 // move main jquery and bootstrap to public
@@ -122,7 +122,7 @@ gulp.task('browserSync', function() {
 
 // Dev task
 gulp.task('dev', ['css', 'js', 'browserSync'], function() {
-  gulp.watch('./scss/*.scss', ['css']);
-  gulp.watch('./js/*.js', ['js']);
+  gulp.watch('./public/scss/*.scss', ['css']);
+  gulp.watch('./public/js/*.js', ['js']);
   gulp.watch('./*.html', browserSync.reload);
 });
